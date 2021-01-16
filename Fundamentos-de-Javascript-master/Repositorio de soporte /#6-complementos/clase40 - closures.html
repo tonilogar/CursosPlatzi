@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase 40 - Closures</title>
+  </head>
+  <body>
+    <script>
+      
+      // Un closure, básicamente, es una función que recuerda el estado de las
+      //  variables al momento de ser invocada, y conserva este estado a través 
+      //  de reiteradas ejecuciones. Un aspecto fundamental de los closures es 
+      //  que son funciones que retornan otras funciones.
+
+      function crearSaludo(finalDeFrase) {
+        return function (nombre) {
+          console.log(`Hola ${nombre} ${finalDeFrase}`)
+        }
+      }
+  
+      const saludoArgentino = crearSaludo('che')
+      const saludoMexicano = crearSaludo('güey')
+      const saludoColombiano = crearSaludo('amigo')
+
+      saludoArgentino('Sacha') // Hola Sacha che
+      saludoMexicano('Sacha') // Hola Sacha güey
+      saludoColombiano('Sacha') // Hola Sacha amigo
+
+      // Otro ejemplo
+
+        function creaSumador(x) {
+          return function(y) {
+            return x + y
+          }
+        }
+
+        var suma5 = creaSumador(5);
+        var suma10 = creaSumador(10);
+
+        console.log(suma5(2));  // muestra 7
+        console.log(suma10(2)); // muestra 12 
+
+    </script>
+  </body>
+</html>

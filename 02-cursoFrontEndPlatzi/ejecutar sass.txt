@@ -1,0 +1,3 @@
+sass --watch /mnt/c/Users/al_faula/documents/trabajos/escuelaDeJavaScript/cursoFrontEndPlatzi/sass-workshop/initial/styles.scss /mnt/c/Users/al_faula/documents/trabajos/escuelaDeJavaScript/cursoFrontEndPlatzi/sass-workshop/initial/styles/index.css
+
+sass --watch /mnt/c/Users/al_faula/documents/trabajos/escuelaDeJavaScript/cursoFrontEndPlatzi/curso-frontend-escuelajs/platzi-video/curso-frontend-developer/iniciar-sesion/styles.scss /mnt/c/Users/al_faula/documents/trabajos/escuelaDeJavaScript/cursoFrontEndPlatzi/curso-frontend-escuelajs/platzi-video/curso-frontend-developer/iniciar-sesion//index.css

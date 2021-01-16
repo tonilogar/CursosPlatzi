@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Obtener coordenadas</title>
+  </head>
+  <body>
+    <h1>Obtener coordenadas</h1>
+	<button onclick="obtenerLocalizacion()">Obtener coordenadas</button>
+	<p id="coordenadas_usuario"></p>
+	<script>
+		var mostrar_coordenadas = document.getElementById("coordenadas_usuario");
+		function obtenerLocalizacion() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(mostrarPosicion);
+			} else {
+				mostrar_coordenadas.innerHTML = "Tu navegador no soporta esta tecnologia";
+			}
+		}
+		function mostrarPosicion(posicion_usuario) {
+			mostrar_coordenadas.innerHTML = "Latitud: " + posicion_usuario.coords.latitude +
+			"<br>Longitud: " + posicion_usuario.coords.longitude;
+		}
+	</script>
+	<p>Acepta la solicitud para ver tu ubicación</p>
+	<cite>Los datos no serán guardados para recopilar ninguna información</cite>
+  </body>
+</html>

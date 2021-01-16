@@ -1,0 +1,59 @@
+<!-- Esto es un comentario -->
+<!DOCTYPE html> <!-- La etiqueta doctype declara el tipo de documento, por lo que esta está señalando que este es un documento HTML. -->
+<html>
+  <head>
+    <title>Peso en otros planetas</title> <!-- Se ve en la pestaña de la pagina -->
+    <!--Las meta etiquetas se utilizan para identificar propiedades del documento como por ejemplo el autor, el título
+    y la descripción que mostrarán los buscadores, etc. -->
+    <meta charset="UTF-8"/> <!-- Nos permite ver todos los caracteres de todos los idiomas -->
+    <meta name="title" content="Antonio López García"/>  <!-- Contiene el titulo que se mostrará en los buscadores. -->
+    <meta name="description" content="Antonio López García"/>  <!-- Es el texto que se muestra bajo el título en los motores de búsqueda. -->
+    <meta name="author" content="Antonio López Garía"/>
+    <meta name="keywords" content="virtual reality, blender, unity, 3D, augmented reality, video game" /> <!-- palabras clave para los buscadores -->
+    <!--<meta name="generator" content="Joomla 3.0" />   <!-- software con el que se ha creado la web, si se hace a mano no se utiliza -->
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+	  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e9b938">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <style type="text/css">
+      h1{ font-family: Helvetica;}
+      p{color: red}
+    </style>
+
+  </head>
+  <body>
+    <h1>Peso en otros planetas </h1>
+    <p>En la tierra pesas distinto que en otro planeta</p>
+    <script type="text/javascript">
+      var planeta = prompt("¿En que planeta quieres calcular tu peso?: \n¿Marte o Jupiter?");
+      var pesoUsuario = prompt("Cual es tu peso");
+      var planeta = planeta.toLowerCase();
+      var peso = parseFloat(pesoUsuario);
+      var gTierra = 9.8;
+      var gMarte = 3.7;
+      var gJupiter = 24.8;
+      var pesoFinal;
+      if(planeta == "marte")
+      {
+        pesoFinal = peso * gMarte / gTierra;
+        pesoFinal = parseFloat(pesoFinal);
+      }
+      else if(planeta == "jupiter")
+      {
+        pesoFinal = peso * gJupiter / gTierra;
+      }
+      else
+      {
+        pesoFinal = 10000000;
+      }
+        pesoFinal = parseFloat(pesoFinal);
+        document.write("Tu peso en " + planeta + " es de <strong>" + pesoFinal.toFixed(2) + " </strong> Kilos");
+    </script>
+
+  </body>
+</html>
