@@ -2,18 +2,26 @@
 de las especificaciones de ecmascript6 */
 
 const express = require('express');//Importamos el modulo express
-const bodyParser = require('body-parser');
+const app = express();
+const server = require('http').Server(app);
 
+const bodyParser = require('body-parser');
+const socket = require('./socket');
+const db = require('./db');
 const router = require('./network/routes');
 
-var app = express();
+db('mongodb+srv://tonilogar:velociraptor27082006@cluster0.f4l55.mongodb.net/telegrom?retryWrites=true&w=majority');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-//app.use(router);
-router(app);
 
+socket.connect(server);
+
+router(app);
 
 app.use('/app', express.static('public'));
 
-app.listen(3000);
-console.log('La aplicación está excuchando en el http://localhost:3000');
+server.listen(3000, function () {
+    console.log('La aplicación está excuchando en el http://localhost:3000');
+});

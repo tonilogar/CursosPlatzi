@@ -5,7 +5,7 @@ const db = require('./db');
 
 const router = require('./network/routes');
 
-db('mongodb://user:user1234@ds255107.mlab.com:55107/telegrom');
+db('mongodb+srv://tonilogar:velociraptor27082006@cluster0.f4l55.mongodb.net/telegrom?retryWrites=true&w=majority');
 
 var app = express();
 app.use(bodyParser.json());
